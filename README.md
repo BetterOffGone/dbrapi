@@ -1,5 +1,4 @@
 [![npm installinfo](https://nodei.co/npm/dbrapi.png?downloads=true&stars=true)](https://www.npmjs.com/package/dbrapi)<br>
-[![Discord](https://discordapp.com/api/guilds/500658335217876997/widget.png)](https://discord.gg/A2BYrj8)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4e138d2f45ee449bbc73b73d6a107fe2)](https://github.com/BetterOffGone/dbrapi)
 [![npm version](https://img.shields.io/npm/v/dbrapi.svg?maxAge=3600)](https://www.npmjs.com/package/dbrapi)
 [![npm downloads](https://img.shields.io/npm/dt/dbrapi.svg?maxAge=3600)](https://www.npmjs.com/package/dbrapi)
