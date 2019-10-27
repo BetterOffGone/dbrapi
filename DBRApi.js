@@ -1,4 +1,5 @@
 const wump = require("wumpfetch");
+const endpoint = "https://discordbotreviews.xyz/api";
 /*
  * name BotListAPI (DDBAPI)
  * author ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
@@ -26,7 +27,7 @@ module.exports = class DBR {
         }
         return new Promise(async (resolve, reject) => {
             
-                const res = await wump(`https://discordbotreviews.xyz/api/bots/${this.botid}/stats`, {
+                const res = await wump(`${endpoint}/bots/${this.botid}/stats`, {
                     method: "POST",
                     headers: {
                         "Authorization": this.token
@@ -51,13 +52,13 @@ module.exports = class DBR {
             throw new Error("[BotID-NaN]: Bot ID must be a number.");
         }
         return new Promise(async (resolve, reject) => {
-            const res = await wump(`https://discordbotreviews.xyz/api/widget/${this.botid}.png`, {
+            const res = await wump(`${endpoint}/widget/${this.botid}.png`, {
                 method: "GET",
             }).send();
             if (!res) {
                 reject(new Error("[Error]: Widget-GET failed to retrieve the Widget-Link."));
             }
-            resolve(`[Success]: Widget-Link: https://discordbotreviews.xyz/api/widget/${this.botid}.png`);
+            resolve(`[Success]: Widget-Link: ${endpoint}/widget/${this.botid}.png`);
         });
     }
 };
