@@ -1,0 +1,30 @@
+{
+  "name": "dbrapi",
+  "version": "1.0.6",
+  "description": "Custom DiscordBotReviews.xyz API System (Unofficial)",
+  "main": "DBRApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightcoreDev/dbrapi.git"
+  },
+  "dependencies": {
+    "wumpfetch": "0.3.1"
+  },
+  "keywords": [
+    "discord",
+    "bots",
+    "reviews",
+    "api",
+    "custom",
+    "nightcore"
+  ],
+  "author": "NightcoreDEV",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/NightcoreDev/dbrapi/issues"
+  },
+  "homepage": "https://github.com/NightcoreDev/dbrapi#readme"
+}
