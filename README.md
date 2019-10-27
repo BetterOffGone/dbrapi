@@ -4,7 +4,8 @@
 
 ### This can be used as an external file and be required in the main file of your bot (Example 2)
 
-# Example 1 - Usage (Javascript) -rename this to poststats.js and place it in PostStats (if following examples)
+# Example 1 - Usage (Javascript) 
+### rename this to poststats.js and place it in PostStats (if following examples)
 
 ```js
 /*
