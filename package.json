@@ -1,6 +1,6 @@
 {
   "name": "dbrapi",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Custom DiscordBotReviews.xyz API System (Unofficial)",
   "main": "DBRApi.js",
   "scripts": {

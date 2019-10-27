@@ -6,7 +6,7 @@
 [Developer Of This Module](https://discordbotreviews.xyz/user/626902605905395732)
 
 Here's the unofficial module of **DiscordBotReviews Bot List** API in JavaScript.
-#### Installation:
+#### Installation
 
 Using **npm**
 
@@ -17,12 +17,12 @@ Using **yarn**
 `yarn add dbrapi`
 <hr>
 
-#### Methods:
+#### Methods
 - .postStats()
 - .getWidget()
 <hr>
 
-#### Examples:
+#### Examples
 
 Methods usage:
 ```js
@@ -31,20 +31,20 @@ const dbr = new DBRAPI('BOT_ID','API_KEY');
 
 ```
 
-- .postStats()
+-  .postStats()
 ```js
 dbr.postStats('SERVER_COUNT')
     .then(console.log);
 ```
 
-- .getWidget()
+-  .getWidget()
 ```js
 
 dbr.getWidget('BOT_ID')
     .then(console.log);
 ```
 
-# Basic Example
+#### Basic Example
 
 ```js
 /*
