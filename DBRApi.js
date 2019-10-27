@@ -2,7 +2,7 @@ const wump = require("wumpfetch");
 /*
  * name BotListAPI (DDBAPI)
  * author ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
- * version 1.1.7
+ * version 1.1.8
  * description: Custom BotListAPI For discordbotreviews.xyz, updated to get widgets of bots.
  */
 module.exports = class DBR {
@@ -25,7 +25,7 @@ module.exports = class DBR {
             throw new Error("[ServerCount-NaN]: Server count must be a number.");
         }
         return new Promise(async (resolve, reject) => {
-            try {
+            
                 const res = await wump(`https://discordbotreviews.xyz/api/bots/${this.botid}/stats`, {
                     method: "POST",
                     headers: {
@@ -38,13 +38,8 @@ module.exports = class DBR {
                 if (!res) {
                     reject(new Error("[Error]: Bot statistics failed to update."));
                 }
-                resolve(`[Success]: Bot statistics have been updated to Guild Count: ${servercount}`);
-            } catch (err) {
-                if (err) {
-                    reject(new Error(`[Error]: ${err.message}`));
-                }
-            }
-        })
+                resolve(`[Success]: Bot statistics have been updated to Guild Count: ${servercount}`);    
+        });
     }
 
 
