@@ -1,33 +1,53 @@
-const wump = require('wumpfetch');
+const wump = require("wumpfetch");
 /*
  * name BotListAPI (DDBAPI)
  * author ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
- * version 1.0.6
- * description: Custom BotListAPI For discordbotreviews.xyz
+ * version 1.1.6
+ * description: Custom BotListAPI For discordbotreviews.xyz, updated to get widgets of bots.
  */
 module.exports = class DBR {
-    constructor(token) {
+    constructor(botid,token) {
         this.token = token;
+        this.botid = botid;
     }
-    postStats(servercount, botid) {
-        if (!this.token) throw new TypeError('[DBR-MODULE][POST-STATS]: API token not provided');
-        if (!botid) throw new Error("[DBR-MODULE][POST-STATS]: Bot ID must be specified.")
-        if (!servercount) throw new Error("[DBR-MODULE][POST-STATS]: Server count must be specified.")
-        if (isNaN(servercount)) throw new Error("[DBR-MODULE][POST-STATS]: Server count must be a number.")
+
+    postStats(servercount) {
+        if (!this.token) throw new TypeError("[Token-Missing]: API token not provided");
+        if (!this.botid) throw new Error("[BotID-Missing]: Bot ID must be specified.");
+        if (!servercount) throw new Error("[ServerCount-Missing]: Server count must be specified.");
+        if (isNaN(servercount)) throw new Error("[ServerCount-NaN]: Server count must be a number.");
         return new Promise(async (resolve, reject) => {
             try {
-                const res = await wump(`https://discordbotreviews.xyz/api/bots/${botid}/stats`, {
-                    method: 'POST',
+                const res = await wump(`https://discordbotreviews.xyz/api/bots/${this.botid}/stats`, {
+                    method: "POST",
                     headers: {
-                        'Authorization': this.token
+                        "Authorization": this.token
                     },
                     data: {
-                        'server_count': servercount
+                        "server_count": servercount
                     }
                 }).send();
-                resolve(`[DBR-MODULE][POST-STATS]: Your stats have been updated to \nGuild Count: ${servercount}`);
+                if(!res){ reject(new Error("[Error]: Bot statistics failed to update.")); }
+                resolve(`[Success]: Bot statistics have been updated to Guild Count: ${servercount}`);
             } catch (err) {
-                reject(new Error(`[DBR-MODULE][POST-STATS]: ${err.message}`)); 
+               if(err) reject(new Error(`[Error]: ${err.message}`)); 
+            }
+        })
+    }
+
+
+    getWidget() {
+        if (!this.botid) throw new Error("[BotID-Missing]: Bot ID must be specified.");
+        if (isNaN(this.botid)) throw new Error("[BotID-NaN]: Bot ID must be a number.");
+        return new Promise(async (resolve, reject) => {
+            try {
+                const res = await wump(`https://discordbotreviews.xyz/api/widget/${this.botid}.png`, {
+                    method: "GET",
+                }).send();
+                if(!res){ reject(new Error("[Error]: Widget-GET failed to retrieve the Widget-Link.")); }
+                resolve(`[Success]: Widget-Link: https://discordbotreviews.xyz/api/widget/${this.botid}.png`);
+            } catch (err) {
+                if(err) reject(new Error(`[Error]: ${err.message}`)); 
             }
         })
     }
