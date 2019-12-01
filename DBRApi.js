@@ -1,10 +1,10 @@
 const wump = require("wumpfetch");
-const endpoint = "https://discordbotreviews.xyz/api";
+const endpoint = "https://bots.tazhys.productions/api";
 /*
- * name BotListAPI (DDBAPI)
+ * name BotListAPI (DBRAPI)
  * author ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
  * version 1.1.8
- * description: Custom BotListAPI For discordbotreviews.xyz, updated to get widgets of bots.
+ * description: Custom BotListAPI For DBR, updated to get widgets of bots.
  */
 module.exports = class DBR {
     constructor(botid, token) {
