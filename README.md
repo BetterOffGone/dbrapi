@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dt/dbrapi.svg?maxAge=3600)](https://www.npmjs.com/package/dbrapi)
 [Developer Of This Module](https://discordbotreviews.xyz/user/626902605905395732)
 
-Here's the unofficial module of **DiscordBotReviews Bot List** API in JavaScript.
+Here's the Official module of **Capehost | DiscordBotReviews Bot List** API in JavaScript.
 #### Installation
 
 Using **npm**
@@ -50,7 +50,7 @@ dbr.getWidget('BOT_ID')
  * name BotListAPI (DBRAPI)
  * author ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
  * version 1.1.6
- * description: Custom BotListAPI For DiscordBotReviews.xyz
+ * description: Custom BotListAPI For Capehost | DBR
  * information: This is an example usage.
  */
 const DBR = require('dbrapi');
